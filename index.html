@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-     <link rel="icon" href="logo.ico">
+    <link rel="icon" href="logo.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>strike help</title>
     <style>
@@ -288,8 +288,8 @@
             const chatBox = document.getElementById('chat-box');
             if (role === 'paciente') {
                 chatBox.innerHTML = `  
-                    <div class="message received">Você já é paciente? (Sim/Não) 🤔</div>
-                    <div class="message received">Para mais informações, entre em contato pelo WhatsApp: <a href="https://wa.me/55119588849894" class="whatsapp-btn">WhatsApp</a></div>
+                    <div class="message received">🌱 Atendimento: Caso precise de ajuda médica ou informações sobre saúde, entre em contato via WhatsApp: <a href="https://wa.me/55119588849894" class="whatsapp-btn">WhatsApp</a></div>
+                    <div class="message received">🛠️ Info: Para mais informações sobre a empresa, acesse nosso site ou entre em contato pelo WhatsApp: <a href="https://wa.me/55119588849894" class="whatsapp-btn">WhatsApp</a></div>
                 `;
             } else if (role === 'medico') {
                 chatBox.innerHTML = `  
@@ -314,7 +314,7 @@
                 `;
             } else if (role === 'parceria') {
                 chatBox.innerHTML = `  
-                    <div class="message received">💬 Parceria? Entre em contato conosco no WhatsApp: <a href="https://wa.me/55119588849894" class="whatsapp-btn">WhatsApp</a></div>
+                    <div class="message received">📈 Parceria: Entre em contato para saber mais sobre oportunidades de parceria: <a href="https://wa.me/55119588849894" class="whatsapp-btn">WhatsApp</a></div>
                 `;
             }
         }
@@ -322,14 +322,11 @@
         function sendMessage() {
             const input = document.getElementById('input').value;
             const chatBox = document.getElementById('chat-box');
-
-            if (input.trim() !== '') {
+            if (input) {
                 chatBox.innerHTML += `<div class="message sent">${input}</div>`;
-                document.getElementById('input').value = '';
-                chatBox.scrollTop = chatBox.scrollHeight;
+                document.getElementById('input').value = ''; 
             }
         }
     </script>
-
 </body>
 </html>
