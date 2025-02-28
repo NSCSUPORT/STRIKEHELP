@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STRIKE HELP </title>
+    <title>Chat - Médico, Paciente, Empresa</title>
     <style>
         body {
             background: linear-gradient(to bottom, #2c3e50, #000); /* Degradê escuro */
@@ -240,6 +240,8 @@
             font-weight: bold;
             margin-top: 20px;
             font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .login-btn:hover {
@@ -304,28 +306,30 @@
                                 <option value="ginecologia">Ginecologia</option>
                             </select>
                             <button class="form-btn" type="submit">Enviar</button>
-                            <button class="login-btn" type="button">Login</button>
+                            <a href="https://www.linkedin.com/in/seu-perfil" class="login-btn" target="_blank">Login LinkedIn</a>
+                            <a href="https://discord.gg/Z5KubhddbW" class="login-btn" target="_blank">Convite Discord</a>
                         </form>
                     </div>
                 `;
             } else if (role === 'parceria') {
                 chatBox.innerHTML = `
                     <div class="message received">💬 Parceria? Entre em contato conosco no WhatsApp!</div>
-                    <a href="https://wa.me/5511958849894" class="whatsapp-btn">WhatsApp</a>
+                    <a href="https://wa.me/5551999999999" class="whatsapp-btn">WhatsApp</a>
                 `;
             }
         }
 
         function sendMessage() {
-            const input = document.getElementById('input');
-            const message = input.value.trim();
-            if (message) {
-                const chatBox = document.getElementById('chat-box');
-                chatBox.innerHTML += `<div class="message sent">${message}</div>`;
-                input.value = '';
+            const input = document.getElementById('input').value;
+            const chatBox = document.getElementById('chat-box');
+
+            if (input.trim() !== '') {
+                chatBox.innerHTML += `<div class="message sent">${input}</div>`;
+                document.getElementById('input').value = '';
                 chatBox.scrollTop = chatBox.scrollHeight;
             }
         }
     </script>
+
 </body>
 </html>
