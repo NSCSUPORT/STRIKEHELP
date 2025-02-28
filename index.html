@@ -270,7 +270,7 @@
     <!-- Chat Container -->
     <div class="chat-container">
         <div class="chat-box" id="chat-box">
-            <div class="message received">👋 Olá, como posso te ajudar hoje?</div>
+            <div class="message received">👋 Olá, como posso te ajudar hoje? Selecione uma opção: Atendimento ou Info.</div>
         </div>
         <div class="input-container">
             <input type="text" id="input" placeholder="Digite sua mensagem...">
@@ -287,11 +287,12 @@
         function startChat(role) {
             const chatBox = document.getElementById('chat-box');
             if (role === 'paciente') {
-                chatBox.innerHTML = `
+                chatBox.innerHTML = `  
                     <div class="message received">Você já é paciente? (Sim/Não) 🤔</div>
+                    <div class="message received">Para mais informações, entre em contato pelo WhatsApp: <a href="https://wa.me/55119588849894" class="whatsapp-btn">WhatsApp</a></div>
                 `;
             } else if (role === 'medico') {
-                chatBox.innerHTML = `
+                chatBox.innerHTML = `  
                     <div class="message received">🩺 Por favor, forneça seus dados médicos para análise.</div>
                     <div class="form-container">
                         <form action="#" method="POST">
@@ -312,9 +313,8 @@
                     </div>
                 `;
             } else if (role === 'parceria') {
-                chatBox.innerHTML = `
-                    <div class="message received">💬 Parceria? Entre em contato conosco no WhatsApp!</div>
-                    <a href="https://wa.me/5551999999999" class="whatsapp-btn">WhatsApp</a>
+                chatBox.innerHTML = `  
+                    <div class="message received">💬 Parceria? Entre em contato conosco no WhatsApp: <a href="https://wa.me/55119588849894" class="whatsapp-btn">WhatsApp</a></div>
                 `;
             }
         }
